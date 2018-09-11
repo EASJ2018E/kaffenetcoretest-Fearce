@@ -2,11 +2,13 @@
 
 namespace KaffeNetCore
 {
-    class Program
+    public class Program
     {
-        static void Main(string[] args)
+        public static bool IsRunning;
+
+        public static void Main()
         {
-            Console.WriteLine("Hello World!");
+            IsRunning = true;
         }
     }
 }
