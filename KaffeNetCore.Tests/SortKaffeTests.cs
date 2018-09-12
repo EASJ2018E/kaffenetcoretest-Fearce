@@ -8,12 +8,16 @@ namespace KaffeNetCore.Tests
     [TestClass]
     public class SortKaffeTests
     {
+        [DataTestMethod]
+        [DataRow(20)]
+        [DataRow(21)]
+        //[DataRow(19)] ikke for meget - fejler i test
         [TestMethod()]
         [ExpectedException(typeof(ArgumentException))]
-        public void PrisTestForMegetRabat20kr()
+        public void PrisTestForMegetRabat20kr(int value)
         {
             //Arrange
-            var sortKaffe = new SortKaffe(20);
+            var sortKaffe = new SortKaffe(value);
 
             //Act
             int pris = sortKaffe.Pris();
